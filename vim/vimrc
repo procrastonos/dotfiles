@@ -1,0 +1,38 @@
+set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set fileencodings=utf8
+set colorcolumn=80
+set cursorcolumn
+set cursorline
+
+syntax on
+syntax enable
+"set background=dark
+"colorscheme github 
+
+" nifty: puge all trailing whitespaces :%s/\s\+$//
+
+"highlight OverLength cterm=underline
+"ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
+
+
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darktred guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darktred guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
+execute pathogen#infect()
+
+
+nmap <space> zz
+nmap n nzz
+nmap N Nzz
+
+filetype plugin indent on
+
+imap ,t <Esc>:tabnew<CR>
