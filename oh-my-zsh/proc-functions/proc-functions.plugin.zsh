@@ -31,6 +31,12 @@ function umox()
    fusermount -u "$MOUNTPOINT"
 }
 
+# make dir and change to it directly
+mkcd () {
+    mkdir "$@"
+    cd "$@"
+}
+
 compctl -K moxpoints mox
 compctl -K moxpoints umox
 
