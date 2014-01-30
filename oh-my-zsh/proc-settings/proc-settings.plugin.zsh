@@ -1,5 +1,5 @@
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+# Use vim keybindings
+bindkey -v
 typeset -A key
 
 key[Home]=${terminfo[khome]}
