@@ -36,7 +36,8 @@ alias ietop='sudo iftop -h -B -i enp0s25'
 
 # arandr scripts
 alias vga="sh ~/.screenlayout/vga_only.sh"
-alias lvds"sh ~/.screenlayout/lvds_only.sh"
+alias lvds="sh ~/.screenlayout/lvds_only.sh"
+alias beam="sh ~/.screenlayout/beamer.sh"
 
 #media
 alias ncmphasi="ncmpcpp -h atlas.hasi" 
