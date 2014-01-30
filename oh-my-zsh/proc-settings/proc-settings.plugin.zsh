@@ -1,5 +1,6 @@
 # Use vim keybindings
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 typeset -A key
 
 key[Home]=${terminfo[khome]}
