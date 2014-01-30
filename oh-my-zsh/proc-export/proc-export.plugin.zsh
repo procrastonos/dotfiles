@@ -6,6 +6,5 @@ export PATH="$PATH:/usr/local/MATLAB/R2013b/bin"
 export EDITOR=/usr/bin/vim
 export BROWSER=/usr/bin/firefox
 export PAGER=/usr/bin/less
-export LESSOPEN="|/usr/bin/source-highlight-esc.sh %s"
 export LESS=' -R'
 export CUPS_SERVER='localhost'
