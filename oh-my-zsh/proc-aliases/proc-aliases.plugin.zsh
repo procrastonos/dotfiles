@@ -31,8 +31,8 @@ alias pm='sudo pm-suspend'
 alias ifup='sudo wpa_supplicant -Dwext -iwlp3s0 -c/etc/wpa_supplicant/wpa_supplicant.conf -B && sudo dhcpcd wlp3s0'
 alias ifupd='sudo wpa_supplicant -Dwext -iwlp3s0 -c/etc/wpa_supplicant/wpa_supplicant.conf -d && sudo dhcpcd wlan0'
 alias ifdown='sudo wpa_cli terminate && sudo killall dhcpcd'
-alias iwtop='sudo iftop -h -B -i wlp3s0'
-alias ietop='sudo iftop -h -B -i enp0s25'
+alias iwtop='sudo iftop -B -i wlp3s0'
+alias ietop='sudo iftop -B -i enp0s25'
 
 # arandr scripts
 alias vga="sh ~/.screenlayout/vga_only.sh"
