@@ -11,7 +11,8 @@ set cursorline
 syntax on
 syntax enable
 "set background=dark
-"colorscheme github 
+"use github color scheme
+colorscheme github 
 
 " nifty: puge all trailing whitespaces :%s/\s\+$//
 
@@ -21,10 +22,13 @@ syntax enable
 
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
 
+hi CursorLine   cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
+nnoremap <Leader>c :set cursorline! cursorcolumn! <CR>
 
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darktred guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darktred guifg=white
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+" force hard wrap at 79 characters
+set tw=79
+set formatoptions+=t
 
 execute pathogen#infect()
 
