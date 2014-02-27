@@ -1,42 +1,52 @@
-set number
+"==============================================================================
+" settings
+"==============================================================================
+set number              " line numbers
 set tabstop=4
 set shiftwidth=4
-set expandtab
-set autoindent
+set expandtab           " replace tabs with spaces
+set autoindent          " indent according to language
 set fileencodings=utf8
-set colorcolumn=80
-set cursorcolumn
-set cursorline
+set colorcolumn=80      " make the 80th colmn visible
+set cursorcolumn        " show a column at cursor position
+set cursorline          " make the cursor line visible
+set foldmethod=indent   " fold code with same indention level
+set background=dark     " dark background
+set tw=79               " force hard wrap at 79 characters
+set formatoptions+=t
 
-syntax on
-syntax enable
-"set background=dark
-"use github color scheme
-colorscheme github 
-
-" nifty: puge all trailing whitespaces :%s/\s\+$//
-
+"==============================================================================
+" colors 
+"==============================================================================
+hi CursorLine   cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
+"colorscheme github      " use github color scheme
 "highlight OverLength cterm=underline
 "ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 
-au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
-
-hi CursorLine   cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
+"==============================================================================
+" key mappings 
+"==============================================================================
 nnoremap <Leader>c :set cursorline! cursorcolumn! <CR>
-
-" force hard wrap at 79 characters
-set tw=79
-set formatoptions+=t
-
-execute pathogen#infect()
-
-
-nmap <space> zz
+nnoremap <space> za
+vnoremap <space> zf
 nmap n nzz
 nmap N Nzz
-
-filetype plugin indent on
-
+"nmap <space> zz
 imap ,t <Esc>:tabnew<CR>
+
+"==============================================================================
+" etc
+"==============================================================================
+syntax on
+syntax enable
+" set syntax highlighting for glsl
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl 
+
+"==============================================================================
+" plugins 
+"==============================================================================
+execute pathogen#infect()
+filetype plugin indent on
+" nifty: puge all trailing whitespaces :%s/\s\+$//
