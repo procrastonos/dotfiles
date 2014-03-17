@@ -11,6 +11,7 @@ set colorcolumn=80      " make the 80th colmn visible
 set cursorcolumn        " show a column at cursor position
 set cursorline          " make the cursor line visible
 set foldmethod=indent   " fold code with same indention level
+set foldlevelstart=20   " fold very late when opening file
 set background=dark     " dark background
 set tw=79               " force hard wrap at 79 characters
 set formatoptions+=t
@@ -28,6 +29,8 @@ hi CursorColumn cterm=NONE ctermbg=blue ctermfg=white guibg=darkred guifg=white
 "==============================================================================
 " key mappings 
 "==============================================================================
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 nnoremap <Leader>c :set cursorline! cursorcolumn! <CR>
 nnoremap <space> za
 vnoremap <space> zf
@@ -48,5 +51,6 @@ au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 " plugins 
 "==============================================================================
 execute pathogen#infect()
+call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 " nifty: puge all trailing whitespaces :%s/\s\+$//
