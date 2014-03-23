@@ -31,4 +31,16 @@ if_up_strictness address
 override_utf8_locale no
  
 TEXT
-LINUX $kernel $machine | UPTIME $uptime | CPU ${cpu}% | RAM ${memperc}% | TEMP CPU ${hwmon temp 1} | MB ${hwmon temp 2} | /SYSTEM ${fs_used /}/${fs_free /} /HOME ${fs_used /home/}/${fs_free /home/} | enp0s25 DOWN ${downspeed enp0s25} UP ${upspeed enp0s25} | wlp3s0 ${wireless_link_qual wlp3s0}% DOWN ${downspeed wlp3s0} UP ${upspeed wlp3s0} | BAT ${exec acpi -b | grep "Battery 0" | awk '{ print $4}'} ${battery_time BAT0} | ${time %A %d %B %Y, %H:%M:%S} 
+UPTIME $uptime|\
+CPU ${cpu}%|\
+DATE ${time %m.%d}|\
+TIME ${time %H:%M:%S}
+
+#LINUX $kernel $machine 
+#RAM ${memperc}% 
+#TEMP CPU ${hwmon temp 1}
+#MB ${hwmon temp 2}
+#/SYSTEM ${fs_used /}/${fs_free /}/HOME ${fs_used /home/}/${fs_free /home/}
+#enp0s25 DOWN ${downspeed enp0s25} UP ${upspeed enp0s25} 
+#wlp3s0 ${wireless_link_qual wlp3s0}% DOWN ${downspeed wlp3s0} UP ${upspeed wlp3s0}
+#BAT ${exec acpi -b | grep "Battery 0" | awk '{ print $4}'} ${battery_time BAT0} 
